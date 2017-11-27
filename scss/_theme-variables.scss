@@ -1,0 +1,30 @@
+@import "theme-functions";
+@import "icons/svg-icons";
+
+$enable-framework: false !default;
+
+// region //////////////////////////////////////////////// Icon Variables
+
+//noinspection SassScssUnresolvedVariable
+@if icon-feature("font-awesome") and has-font-awesome() {
+  $icon-css-prefix: $fa-css-prefix !default;
+  $icon-font-name: FontAwesome !default;
+  $icon-font-size: $fa-font-size-base !default;
+  $icon-line-height: $fa-line-height-base !default;
+}
+
+$icon-css-prefix:       ico           !default;
+$icon-width:            16px          !default;
+$icon-height:           16px          !default;
+
+$icon-font-size:        $icon-width   !default;
+$icon-line-height:      1 !default;
+
+// endregion ///////////////////////////////////////////// End Icon Variables
+
+// region //////////////////////////////////////////////// Theme Variables
+
+$border-radius: 4px;
+
+// endregion ///////////////////////////////////////////// End Theme Variables
+

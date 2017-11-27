@@ -1,0 +1,74 @@
+@import "strapless/base/scss/base";
+@import "icons/svg-icons";
+
+@function icon-feature($f) {
+  @return component-feature("icons", $f);
+}
+
+@function has-font-awesome() {
+  @if(variable-exists(fa-font-path)) {
+    @if(variable-exists(fa-font-size-base)) {
+      @if(variable_exists(fa-line-height-base)) {
+        @return true;
+      }
+    }
+  }
+
+  @return false;
+}
+
+// Encode symbols
+@function _url-encode($string) {
+  $map: (
+                "%": "%25",
+                "<": "%3C",
+                ">": "%3E",
+                " ": "%20",
+                "!": "%21",
+                "*": "%2A",
+                "'": "%27",
+                '"': "%22",
+                "(": "%28",
+                ")": "%29",
+                ";": "%3B",
+                ":": "%3A",
+                "@": "%40",
+                "&": "%26",
+                "=": "%3D",
+                "+": "%2B",
+                "$": "%24",
+                ",": "%2C",
+                "/": "%2F",
+                "?": "%3F",
+                "#": "%23",
+                "[": "%5B",
+                "]": "%5D"
+        );
+
+  $new: $string;
+
+  @each $search, $replace in $map {
+    $new: str-replace($new, $search, $replace);
+  }
+
+  @return $new;
+}
+
+// Format the SVG as a URL
+@function inline-svg($string) {
+  @return url('data:image/svg+xml,#{_url-encode($string)}');
+}
+
+@function get-svg-icon($icon-name) {
+  // Make sure we aren't already an SVG
+  @if quote(str-slice($icon-name, 1, 4)) == "<svg" {
+    @return $icon-name;
+  }
+
+  @if map-has-key($svg-icons, $icon-name) {
+    @return map-get($svg-icons,$icon-name);
+  } @else {
+    @error "Invalid SVG Icon name `#{$icon-name}` provided.";
+  }
+}
+

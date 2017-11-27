@@ -1,0 +1,12 @@
+// region //////////////////////////////////////////////// SVG Icon Map
+
+$svg-icons: (
+  'chevron-bottom': '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="8" height="8" viewBox="0 0 8 8"><path d="M1.5 0l-1.5 1.5 4 4 4-4-1.5-1.5-2.5 2.5-2.5-2.5z" transform="translate(0 1)" /></svg>',
+  'chevron-left':   '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="8" height="8" viewBox="0 0 8 8"><path d="M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z" transform="translate(1)" /></svg>',
+  'chevron-right':  '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="8" height="8" viewBox="0 0 8 8"><path d="M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z" transform="translate(1)" /></svg>',
+  'chevron-top':    '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="8" height="8" viewBox="0 0 8 8"><path d="M4 0l-4 4 1.5 1.5 2.5-2.5 2.5 2.5 1.5-1.5-4-4z" transform="translate(0 1)" /></svg>',
+  'caret-bottom':   '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="8" height="8" viewBox="0 0 8 8"><path d="M0 0l4 4 4-4h-8z" transform="translate(0 2)" /></svg>',
+  'caret-left':     '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="8" height="8" viewBox="0 0 8 8"><path d="M4 0l-4 4 4 4v-8z" transform="translate(2)" /></svg>',
+  'caret-right':    '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="8" height="8" viewBox="0 0 8 8"><path d="M0 0v8l4-4-4-4z" transform="translate(2)" /></svg>',
+  'caret-top':      '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="8" height="8" viewBox="0 0 8 8"><path d="M4 0l-4 4h8l-4-4z" transform="translate(0 2)" /></svg>'
+            ) !default;

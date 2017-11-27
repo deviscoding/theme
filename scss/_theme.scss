@@ -1,0 +1,33 @@
+@import "theme-variables";
+
+// region //////////////////////////////////////////////// Icon Classes
+
+@if component("icons") {
+  @if icon-feature("font") and not(icon-feature("font-awesome")) {
+    @include icon-font();
+    .#{$icon-css-prefix}-2x { font-size: 2em; }
+    .#{$icon-css-prefix}-3x { font-size: 3em; }
+    .#{$icon-css-prefix}-4x { font-size: 4em; }
+    .#{$icon-css-prefix}-5x { font-size: 5em; }
+  }
+
+  @if icon-feature("svg") {
+    svg.#{$icon-css-prefix} {
+      width: $icon-width;
+      height: $icon-height;
+      max-height: 100%;
+      fill: currentColor;
+      @if component-feature("icons","font") {
+        &::before {
+          content: '' !important;
+        }
+      }
+      &.#{$icon-css-prefix}-2x { width: 2 * $icon-width; height: 2 * $icon-height; }
+      &.#{$icon-css-prefix}-3x { width: 3 * $icon-width; height: 3 * $icon-height; }
+      &.#{$icon-css-prefix}-4x { width: 4 * $icon-width; height: 4 * $icon-height; }
+      &.#{$icon-css-prefix}-5x { width: 5 * $icon-width; height: 5 * $icon-height; }
+    }
+  }
+}
+
+// endregion ///////////////////////////////////////////// End Icon Classes
