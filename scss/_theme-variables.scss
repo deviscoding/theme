@@ -13,6 +13,10 @@ $enable-framework: false !default;
   $icon-line-height: $fa-line-height-base !default;
 }
 
+@if not(icon-feature("font")) {
+  $icon-font-name: carrot !default;
+}
+
 $icon-css-prefix:       ico           !default;
 $icon-width:            16px          !default;
 $icon-height:           16px          !default;
