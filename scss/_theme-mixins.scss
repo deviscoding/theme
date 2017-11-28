@@ -15,7 +15,7 @@
   }
 }
 
-@mixin _font-psuedo($location, $icon-content: null, $opacity: 0, $color) {
+@mixin _font-psuedo($location, $icon-content: null, $opacity: 0, $color: null) {
   &::#{$location} {
     @include icon-font;
     @if $icon-content != null {
@@ -53,7 +53,7 @@
 
 @mixin _svg-background($svg, $size: $icon-width) {
   $content: unquote($svg);
-  background-image: inline-svg($svg) center center / $size $size no-repeat;
+  background: inline-svg($svg) center center / $size $size no-repeat;
 }
 
 @mixin _svg-psuedo($location, $size: $icon-width, $svg: null, $opacity: null, $fill: null) {
@@ -83,11 +83,15 @@
 }
 
 @mixin svg-before($size: $icon-width, $svg-or-name: null, $opacity: null, $fill: null) {
-  @include _svg-psuedo(before, $size, get-svg-icon($svg-or-name), $opacity, $fill);
+  @include _svg-psuedo(before, $size, get-svg-icon($svg-or-name), $opacity, $fill) {
+    @content;
+  }
 }
 
 @mixin svg-after($size: $icon-width, $svg-or-name: null, $opacity: null, $fill: null) {
-  @include _svg-psuedo(after, $size, get-svg-icon($svg-or-name), $opacity, $fill);
+  @include _svg-psuedo(after, $size, get-svg-icon($svg-or-name), $opacity, $fill) {
+    @content;
+  }
 }
 
 // endregion ///////////////////////////////////////////// End SVG Icon Mixins
@@ -111,7 +115,7 @@
 @mixin card-accordion-indicator($indicator, $size, $right-spacing) {
   .card-accordion > .card .card-title  {
     a[data-toggle="collapse"] {
-      @include svg-before($indicator, $size, .3) {
+      @include svg-before($size, $indicator, .3) {
         transform-origin: center center;
         transition-duration: 0.35s;
         right: $right-spacing;
@@ -215,5 +219,3 @@
 }
 
 // endregion ///////////////////////////////////////////// End Rounding Mixins
-
-

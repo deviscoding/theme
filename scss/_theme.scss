@@ -2,7 +2,10 @@
 
 // region //////////////////////////////////////////////// Icon Classes
 
-@if component("icons") { 
+@if component("icons") {
+  
+
+  
   @if icon-feature("font") and not(icon-feature("font-awesome")) {
     @include icon-font();
     .#{$icon-css-prefix}-2x { font-size: 2em; }
